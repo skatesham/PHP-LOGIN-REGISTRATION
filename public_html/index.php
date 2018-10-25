@@ -23,7 +23,7 @@ endif;
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><i class="fas fa-home"></i> Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Recursos</a>
@@ -41,15 +41,13 @@ endif;
           <a class="dropdown-item" href="#">Preferencias</a>
         </div>
       </li>
+      <li class="ml-auto nav-item">
+        <a class="nav-link" href="logoff.php"><i class="fas fa-sign-out-alt"></i> Logoff</a>
+      </li>
+    </div>
     </ul>
   </div>
-    <div class="navbar-collapse collapse order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="logoff.php">Logoff</a>
-            </li>
-        </ul>
-    </div>
+
 </nav>
 <div class="row">
 	<div class="ml-sm-auto col-sm-8 mr-sm-auto m-5 bg-dark">
