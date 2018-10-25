@@ -7,7 +7,7 @@
     $pass = $_POST['password'];
 
     // Acess to the database
-    include_once 'service/service_user.php';
+    include_once '../service/service_user.php';
 
     $query = read_user($user, $pass);
 

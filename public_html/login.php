@@ -44,7 +44,7 @@ session_start();
 if(isset($_SESSION['failin'])){
 	if($_SESSION['failin']){
 		echo '<script language="javascript">';
-		echo 'alert("Dados inseridos não conferem com nenhum registro de usuário!")';
+		echo 'fail();';
 		echo '</script>';
 	}
 }

@@ -3,17 +3,18 @@
 <?php startblock('import') ?>
 <?php
 session_start();
+
 $route = htmlspecialchars($_SERVER['PHP_SELF']);
+
 if(isset($_POST['registro'])){ //check if form was submitted
   $user = $_POST['user']; //get input text
   $pass = $_POST['password'];
-  $pass = hash('sha256', $pass);
   
-  include_once 'service/service_user.php';
+  include_once '../service/service_user.php';
 
   $query = save_user($user, $pass);
 
-	if ($query === TRUE) {
+	if ($query == TRUE) {
   		$_SESSION['fail'] = FALSE;
         header('location:login.php');
 	} else {
@@ -37,10 +38,10 @@ if(isset($_POST['registro'])){ //check if form was submitted
 		<h1 class="h3 mb-3 font-weight-normal">Registro</h1>
 		<div class="mb-5"></div>
 		<label for="inputEmail" class="sr-only">Nome de usuário</label>
-		<input type="text" name="user" id="inputEmail" class="form-control" placeholder="Nome de usuário" required >
+		<input type="text" name="user" id="user" class="form-control" placeholder="Nome de usuário" required >
 		<div class="mb-5"></div>
 		<label for="inputPassword" class="sr-only">Senha:</label>
-		<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+		<input type="password" name="password" id="pass" class="form-control" placeholder="Senha" required>
 		<div class="checkbox mb-3" style="display: none;">
 			<label>
 			<input type="checkbox" value="remember-me"> Remember me
@@ -59,11 +60,9 @@ if(isset($_POST['registro'])){ //check if form was submitted
 <?php
 if(isset($_SESSION['fail'])){
 	if($_SESSION['fail']){
-		echo '<script language="javascript">';
-		echo 'alert("Usuário indisponível!")';
-		echo '</script>';
+		echo "<script type='text/javascript'>fail();</script>";
 	}
 }
 ?>
 <?php endblock() ?>
-<script type="text/javascript"></script>
+<script type="text/javascript">//fail();</script>
