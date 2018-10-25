@@ -14,7 +14,7 @@ if(isset($_POST['registro'])){ //check if form was submitted
 
   $query = save_user($user, $pass);
 
-	if ($query == TRUE) {
+	if ($query) {
   		$_SESSION['fail'] = FALSE;
         header('location:login.php');
 	} else {

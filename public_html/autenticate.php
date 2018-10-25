@@ -10,10 +10,9 @@
     include_once '../service/service_user.php';
 
     $query = read_user($user, $pass);
-
+    
     if($query->num_rows) {
         $_SESSION['user'] = $user;
-        $_SESSION['pass'] = $pass;
         $_SESSION['login'] = TRUE;
         header('location:index.php');
     } else {
