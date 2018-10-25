@@ -1,6 +1,12 @@
 <?php
 // db Connection
-$mysqli = new mysqli('192.168.1.11', 'php', 'fatec123', 'pagephp');
+
+define("HOST", '192.168.1.11');
+define("USER", 'php');
+define("PASSWORD", 'fatec123');
+define("DB", 'pagephp');
+
+$mysqli = new mysqli(HOST, USER , PASSWORD, DB);
 
 /* check connection */
 if ($mysqli->connect_errno) {
